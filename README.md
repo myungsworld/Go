@@ -38,10 +38,10 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
 ##  시간복잡도
 
 Slice  
-- append -> O(N)  
-- remove -> O(N)  
-- Random Access -> O(1)
+    - append -> O(N)  
+    - remove -> O(N)  
+    - Random Access -> O(1)  
 ListLinked  
-- append -> O(1)  
-- remove -> O(1)    
-- Random Access -> O(N)
+    - append -> O(1)  
+    - remove -> O(1)    
+    - Random Access -> O(N)
