@@ -25,11 +25,45 @@ func (l *LinkedList) AddNode(val int) {
 	l.Tail.Prev = prev
 }
 
+func (l *LinkedList) Back() int {
+	if l.Tail != nil {
+		return l.Tail.Val
+	}
+	return 0
+}
+
+func (l *LinkedList) Front() int {
+	if l.Root != nil {
+		return l.Root.Val
+	}
+	return 0
+}
+func (l *LinkedList) Empty() bool {
+	return l.Root == nil
+}
+
+func (l *LinkedList) PopBack() {
+	if l.Tail == nil {
+		return
+	}
+	l.RemoveNode(l.Tail)
+}
+
+func (l *LinkedList) PopFront() {
+	if l.Root == nil {
+		return
+	}
+	l.RemoveNode(l.Root)
+}
+
 func (l *LinkedList) RemoveNode(node *Node) {
 	//첫번째 노드 삭제
 	if node == l.Root {
 		l.Root = l.Root.Next
-		l.Root.Prev = nil
+		if l.Root != nil {
+			l.Root.Prev = nil
+		}
+
 		node.Next = nil
 		return
 	}

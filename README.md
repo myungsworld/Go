@@ -37,11 +37,23 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
 
 ##  시간복잡도
 
-Slice  
+- **Slice**  (cache에 좋음)
     - append -> O(N)  
     - remove -> O(N)  
     - Random Access -> O(1)  
-ListLinked  
+        - stack   
+            - append -> 0(N)  
+            - remove -> O(1)  
+        - queue  
+            - append -> 0(N)  
+            - remove -> O(1)  
+- **ListLinked**  (cache 적중률이 낮아짐 (거의 없음))
     - append -> O(1)  
     - remove -> O(1)    
-    - Random Access -> O(N)
+    - Random Access -> O(N)  
+        - stack 
+            - append -> O(1)
+            - remove -> O(1)
+        - queue
+            - append -> O(1)
+            - remove -> O(1)
