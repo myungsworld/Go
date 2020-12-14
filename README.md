@@ -35,7 +35,7 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
 
 
 
-##  시간복잡도
+##  자료구조
 
 - **Slice**  (cache에 좋음)
     - append -> O(N)  
@@ -65,5 +65,18 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
     - [BFS(넓이우선검색)](https://src/dataStruct/tree.go)
         1. 큐  
     - [BST(이진검색트리)](https://src/datasStruct/binaryTree.go)  
-        1. Parent 기준으로부터 left는 Parent 보다 작은 노드 right는 Parent 보다 큰 노드  
+        1. Ex) Parent 기준으로부터 left는 Parent 보다 작은 노드 right는 Parent 보다 큰 노드  
         2. 특정 노드를 찾을 때 좋음(검색)  O(log2N)
+    - [AVL(최소신장트리)]()
+        1. 회전시켜서 트리의 신장을 최소로 줄임  
+
+- **Heap** :정렬을 만들 수 있음 (힙정렬)
+    - 속도 : O(Nlog2N)
+        - Push : O(log2N) 마지막 노드에 추가해 위의 노드와 비교해서 올라감  
+        - Pop : O(log2N) 맨 끝 노드를 맨 위로 올린다음 자식노드와 비교해서 큰 노드와 교체  
+    - 최대 힙(우선순위 큐) : 부모노드가 자식노드보다 크거나 같아야 함
+    - 최소 힙 : 부모노드가 자식노드보다 작거나 같아야 함  
+
+
+
+    
