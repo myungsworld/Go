@@ -42,10 +42,10 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
     - remove -> O(N)  
     - Random Access -> O(1)  
         - stack   
-            - append -> 0(N)  
+            - append -> O(N)  
             - remove -> O(1)  
         - queue  
-            - append -> 0(N)  
+            - append -> O(N)  
             - remove -> O(1)  
 - **ListLinked**  (cache 적중률이 낮아짐 (거의 없음))
     - append -> O(1)  
@@ -57,3 +57,13 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
         - queue
             - append -> O(1)
             - remove -> O(1)
+- **Tree**
+
+    - [DFS(깊이우선검색)](https://src/dataStruct/tree.go)
+        1. 재귀호출
+        2. 스택  
+    - [BFS(넓이우선검색)](https://src/dataStruct/tree.go)
+        1. 큐  
+    - [BST(이진검색트리)](https://src/datasStruct/binaryTree.go)  
+        1. Parent 기준으로부터 left는 Parent 보다 작은 노드 right는 Parent 보다 큰 노드  
+        2. 특정 노드를 찾을 때 좋음(검색)  O(log2N)
