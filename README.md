@@ -34,6 +34,43 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
 위와 같이 a의 capacity를 넘기는 b slice를 추가하면 a 와 b 의 주소는 바뀌게 되어 b[0] 값을 9999로 바꾸면 b만 바뀌게 된다.  
 
 
+## [Map](https://src/dataStruct/map.go)
+Key-Value 값으로 저장되는 배열  
+```go
+    m := make(map[int]int)
+    m[0] = 0
+    v, ok := m[0]
+    v2, ok2 := m[1]
+    fmt.Println(v, ok, v2, ok2)
+    //출력 = 0 true 0 false
+
+    delete(m, 0)
+    v, ok := m[0]
+    fmt.Println(v, ok, v2, ok2)
+    //출력 = 0 false 0 false
+
+    //map 순회
+    for key, value := range m {
+        fmt.Println(key, " : " , value)
+    }
+```
+map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, 확인하는 방법은 파라미터를 2개로 두고 bool형으로 확인
+
+- Hash
+    - 출력 값의 범위가 있다. (넣을수 있는 입력값은 한정되어 있지만 출력값은 동일할수도 있음) 
+    - Hash를 만족할수 있는 함수 sign function , Modular (나머지 연산)
+    - 공개키 암호화 , Checksum , 블록체인 
+    - [RollingHash](https://src/dataStruct/map.go)
+    - 다른 입력을 넣었을때 같은 값이 나올수 있는데 이걸 방지하기 위해 해쉬값에다가 또다른 배열을 추가 -> [Hash](https://src/datastruct/map.go)
+    - HashMap (Hash 사용)
+        - find , add , remove : O(1)
+    - SortedMap (BST 사용)
+        - find , add , remove : O(log2N)   
+- Modular -> One-way function
+    - X Mod N = M 일때 X의 후보군이 될수있는 값은 무수히 많음  
+    - 이러한 구조때문에 암호화가 가능
+
+
 
 ##  자료구조
 
@@ -47,7 +84,7 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
         - queue  
             - append -> O(N)  
             - remove -> O(1)  
-- **ListLinked**  (cache 적중률이 낮아짐 (거의 없음))
+- [**LinkedList**](https://src/dataStruct/linkedList.go)  (cache 적중률이 낮아짐 (거의 없음))
     - append -> O(1)  
     - remove -> O(1)    
     - Random Access -> O(N)  
@@ -70,7 +107,7 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
     - [AVL(최소신장트리)]()
         1. 회전시켜서 트리의 신장을 최소로 줄임  
 
-- **Heap** :정렬을 만들 수 있음 (힙정렬)
+- [**Heap**](https://src/dataStruct/heap.go) :정렬을 만들 수 있음 (힙정렬)
     - 속도 : O(Nlog2N)
         - Push : O(log2N) 마지막 노드에 추가해 위의 노드와 비교해서 올라감  
         - Pop : O(log2N) 맨 끝 노드를 맨 위로 올린다음 자식노드와 비교해서 큰 노드와 교체  
@@ -79,4 +116,3 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
 
 
 
-    
