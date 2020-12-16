@@ -116,7 +116,9 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
 
 
 
-## Thread
+## [Thread](https://src/Intermediate/thread/main.go)
 
 Go 에서는 OS의 CPU의 개수만큼 쓰레드를 만들고 각 OS의 쓰레드를 짤라서 여러개의 Go Theard 를 할당한다.  
-프로그래머 입장에서 Context switching을 상관쓰지 않아도 됨 (다른 언어보다)
+프로그래머 입장에서 Context switching을 상관쓰지 않아도 됨 (다른 언어보다)  
+
+여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://src/Intermediate/account/main.go))
