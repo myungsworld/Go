@@ -106,7 +106,7 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
         2. 특정 노드를 찾을 때 좋음(검색)  O(log2N)
     - [AVL(최소신장트리)]()
         1. 회전시켜서 트리의 신장을 최소로 줄임  
-
+ 
 - [**Heap**](https://src/dataStruct/heap.go) :정렬을 만들 수 있음 (힙정렬)
     - 속도 : O(Nlog2N)
         - Push : O(log2N) 마지막 노드에 추가해 위의 노드와 비교해서 올라감  
@@ -122,3 +122,8 @@ Go 에서는 OS의 CPU의 개수만큼 쓰레드를 만들고 각 OS의 쓰레�
 프로그래머 입장에서 Context switching을 상관쓰지 않아도 됨 (다른 언어보다)  
 
 여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://src/Intermediate/account/main.go))
+Golang에서는 이걸 쉽게 하기위해 channel을 제공함  
+
+## [Channel (Queue)](https://src/Intermediate/factory/main.go)
+Thread Safe , fixed size queue
+[select](https:go/src/Intermediate/select/main.go)
