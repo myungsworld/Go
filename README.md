@@ -150,3 +150,19 @@ Thread Safe , fixed size queue
             - 인터페이스 분리원칙 : 여러개의 관계를 모아놓은 인터페이스보다 관계 하나씩 정의하는게 더 좋다. 
         - [D : Dependency inversion principle](https://go/src/Intermediate/ood/dip.go)
             - 관계는 인터페이스에 의존해야 한다. 객체가 아니라
+
+- ## Beyond OOP
+    - Micro Service
+    - Serverless
+    - ECS(Entity Component System)
+        - 직접도가 올라감
+    - MVC(Model View Controller)
+        - Data와 View 와 기능을 따로 만들어서 View에서 쓰는 것  
+
+## 계속 공부해야 하는 것들
+
+1. **컴퓨터 원리** -> 하드웨어 -> CPU 설계
+2. **프로그래밍언어 & 문법**
+3. **자료구조 & 알고리즘**
+4. **Thread & 고급기능**
+5. **OOP** -> 설계 (아키텍쳐)
