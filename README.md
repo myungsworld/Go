@@ -121,9 +121,20 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
 Go 에서는 OS의 CPU의 개수만큼 쓰레드를 만들고 각 OS의 쓰레드를 짤라서 여러개의 Go Theard 를 할당한다.  
 프로그래머 입장에서 Context switching을 상관쓰지 않아도 됨 (다른 언어보다)  
 
-여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://src/Intermediate/account/main.go))
+여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://src/Intermediate/account/main.go))  
 Golang에서는 이걸 쉽게 하기위해 channel을 제공함  
 
 ## [Channel (Queue)](https://src/Intermediate/factory/main.go)
 Thread Safe , fixed size queue
 [select](https:go/src/Intermediate/select/main.go)
+
+## OOP  
+- [절차적 프로그래밍](https://go/src/Intermediate/sandwitch/main.go)  
+    - 순서와 절차
+- [OOP](https://go/src/Intermediate/method/main.go)
+    - 각 Objects 의 기능
+    - 각 Objects 간의 관계
+    - 메서드는 object에 속해있는 function
+- [Interface](https://go/src/Intermediate/sandwitch2/main.go)
+    - 객체간 상호 관계 정의
+    - object = 상태 + 기능 , interface는 obejct의 기능을 따로 정함, decoupling 종속성 제거 
