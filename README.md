@@ -138,3 +138,15 @@ Thread Safe , fixed size queue
 - [Interface](https://go/src/Intermediate/sandwitch2/main.go)
     - 객체간 상호 관계 정의
     - object = 상태 + 기능 , interface는 obejct의 기능을 따로 정함, decoupling 종속성 제거 
+- OOD : object oriented design
+    - SOLID 객체 중심 설계를 위해 지향해야할 목표
+        - [S : Single Reponsibility principle](https://go/src/Intermediate/ood/srp.go)
+            - 단일 책임 원칙 : 하나의 객체는 하나의 책임을 가져야 한다
+        - [O : Open closed principle](https://go/src/Intermediate/ood/srp.go)
+            - 확장에는 열려있고 변경에는 닫혀있다.
+        - L : Liskop subtitution principle
+            - 리스코프 치환 이론 : Base Type의 기존 함수(동작)을 Exprended Type에서도 동일하게 적용이 되어야한다.
+        - [I : Interface segregation principle](https://go/src/Intermeditae/ood/isp.go)
+            - 인터페이스 분리원칙 : 여러개의 관계를 모아놓은 인터페이스보다 관계 하나씩 정의하는게 더 좋다. 
+        - [D : Dependency inversion principle](https://go/src/Intermediate/ood/dip.go)
+            - 관계는 인터페이스에 의존해야 한다. 객체가 아니라
