@@ -1,10 +1,12 @@
 # Go
 
-Go의 선업대입문은 모두 copy 되어 메모리에 저장된다.  
+1. [Go Basic](#Garbage-Collector)
+2. [Go Web Programming](#WEB)
 
 ## Garbage Collector
 
 Reference count = 0 이 되면 메모리를 지움  
+Go의 선업대입문은 모두 copy 되어 메모리에 저장된다.  
     
 ## Slice
 
@@ -166,3 +168,6 @@ Thread Safe , fixed size queue
 3. **자료구조 & 알고리즘**
 4. **Thread & 고급기능**
 5. **OOP** -> 설계 (아키텍쳐)
+
+# WEB
+
