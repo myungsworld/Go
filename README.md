@@ -103,10 +103,10 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
         2. 스택  
     - [BFS(넓이우선검색)](https://github.com/myungsworld/Go/blob/main/src/dataStruct/tree.go)
         1. 큐  
-    - [BST(이진검색트리)](https://github.com/myungsworld/Go/blob/main/src/datasStruct/binaryTree.go)  
+    - [BST(이진검색트리)](https://github.com/myungsworld/Go/blob/main/src/dataStruct/binaryTree.go)  
         1. Ex) Parent 기준으로부터 left는 Parent 보다 작은 노드 right는 Parent 보다 큰 노드  
         2. 특정 노드를 찾을 때 좋음(검색)  O(log2N)
-    - [AVL(최소신장트리)]()
+    - AVL(최소신장트리)
         1. 회전시켜서 트리의 신장을 최소로 줄임  
  
 - [**Heap**](https://github.com/myungsworld/Go/blob/main/src/dataStruct/heap.go) :정렬을 만들 수 있음 (힙정렬)
@@ -123,11 +123,11 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
 Go 에서는 OS의 CPU의 개수만큼 쓰레드를 만들고 각 OS의 쓰레드를 짤라서 여러개의 Go Theard 를 할당한다.  
 프로그래머 입장에서 Context switching을 상관쓰지 않아도 됨 (다른 언어보다)  
 
-여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://src/Intermediate/account/main.go))  
+여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://github.com/myungsworld/Go/blob/main/src/Intermediate/account/main.go))  
 Golang에서는 이걸 쉽게 하기위해 channel을 제공함  
 
 ## [Channel (Queue)](https://github.com/myungsworld/Go/blob/main/src/Intermediate/factory/main.go)
-Thread Safe , fixed size queue
+Thread Safe , fixed size queue  
 [select](https://github.com/myungsworld/Go/blob/main/src/Intermediate/select/main.go)
 
 ## OOP  
@@ -147,7 +147,7 @@ Thread Safe , fixed size queue
         - [O : Open closed principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/srp.go)
             - 확장에는 열려있고 변경에는 닫혀있다.
         - L : Liskop subtitution principle
-            - 리스코프 치환 이론 : Base Type의 기존 함수(동작)을 Exprended Type에서도 동일하게 적용이 되어야한다.
+            - 리스코프 치환 이론 : Base Type의 기존 함수(동작)를 Exprended Type에서도 동일하게 적용이 되어야한다.
         - [I : Interface segregation principle](https://github.com/myungsworld/Go/blob/main/src/Intermeditae/ood/isp.go)
             - 인터페이스 분리원칙 : 여러개의 관계를 모아놓은 인터페이스보다 관계 하나씩 정의하는게 더 좋다. 
         - [D : Dependency inversion principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/dip.go)
