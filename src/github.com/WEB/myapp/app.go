@@ -16,7 +16,7 @@ type User struct {
 
 type fooHandler struct{}
 
-func IndexHandler(w http.ResponseWriter, r *http.Request) {
+func indexHandler(w http.ResponseWriter, r *http.Request) {
 	//writer에 문자열을 출력하는 것
 	fmt.Fprint(w, "Hello World")
 }
@@ -34,12 +34,9 @@ func (f *fooHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	user.CreateAt = time.Now()
 
 	data, _ := json.Marshal(user)
-	fmt.Println("1")
-	fmt.Println(data)
-	fmt.Println("2")
-	fmt.Println(string(data))
+
 	w.Header().Add("content-type", "application/json")
-	w.WriteHeader(http.StatusOK)
+	w.WriteHeader(http.StatusCreated)
 	//data는 byte array이기때문에 String으로 바꿔줌
 	fmt.Fprint(w, string(data))
 }
@@ -58,7 +55,7 @@ func NewHttpHandler() http.Handler {
 	mux := http.NewServeMux()
 
 	//func 직접 등록
-	mux.HandleFunc("/", IndexHandler)
+	mux.HandleFunc("/", indexHandler)
 
 	mux.HandleFunc("/bar", barHandler)
 
