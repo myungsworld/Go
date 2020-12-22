@@ -171,5 +171,12 @@ Thread Safe , fixed size queue
 
 # WEB
 
-[goconvey => test 환경 구축](https://go/src/github.com/WEB/myapp/app_test.go)
-[Static Web Server(File upload)](https://go/src/github/com/WEB2)
+- [goconvey => test 환경 구축](https://go/src/github.com/WEB/myapp/app_test.go)  
+- [Static Web Server(File upload)](https://go/src/github.com/com/WEB2)
+- [RestfulAPI](https://go/src/github.com/WEB3)
+    - 자원에 대한 CRUD 조작을 URL에다가 표시
+    - gorilla/mux => 자동으로 파싱시켜주는 외부 패키지
+- 배포
+    - 도메인 구매 , DNS 등록
+    - 개인 IP는 ISP(Internet Service Provider) 가 제공한 동적 IP 할당함으로 Private 이다.  따라서 외부에서 접속이 불가
+    - Public IP를 받으려면 호스팅을 받아야 한다. 그중 클라우드 서비스를 많이 사용 IaaS(Infrasturct as a Service)
