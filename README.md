@@ -186,9 +186,11 @@ Thread Safe , fixed size queue
 
 
 
-
-
 - 배포
     - 도메인 구매 , DNS 등록
     - 개인 IP는 ISP(Internet Service Provider) 가 제공한 동적 IP 할당함으로 Private 이다.  따라서 외부에서 접속이 불가
     - Public IP를 받으려면 호스팅을 받아야 한다. 그중 클라우드 서비스를 많이 사용 IaaS(Infrasturct as a Service)
+
+- ## Design Pattern
+    - [Decorator Pattern](https://go/src/decoratePattern/main.go)
+        - 객체에 새로운 행동을 동적으로 첨가로 인해 객체의 기능을 유연하게 확장 시킴
