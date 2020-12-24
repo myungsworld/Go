@@ -182,7 +182,7 @@ Thread Safe , fixed size queue
      vars := mux.Vars(r) , id := vars("id")
      id := vars("id")
     ```
-
+- [Decorator + WEB4](https://go/src/github.com/WEB4)
 
 
 
@@ -193,4 +193,4 @@ Thread Safe , fixed size queue
 
 - ## Design Pattern
     - [Decorator Pattern](https://go/src/decoratePattern/main.go)
-        - 객체에 새로운 행동을 동적으로 첨가로 인해 객체의 기능을 유연하게 확장 시킴
+        - 객체에 새로운 행동을 동적으로 첨가해 객체의 기능을 유연하게 확장 시킴
