@@ -185,6 +185,10 @@ Thread Safe , fixed size queue
 - [Decorator + WEB4](https://go/src/github.com/WEB4)
 - [Template](https://go/src/github.com/templateW)
     - Go에는 강력한(?) 내부 template package가 있음
+- [Render,Pat,Negroni 외부패키지](https://go/src/github.com/packageW)
+    - pat : mux와 비슷한 일을 하는데 좀더 간단한 코드로 구현 가능
+    - render : json parsing , html template 간단한 코드로 구현
+    - negroni : HTTP Middleware
 
 
 - 배포
