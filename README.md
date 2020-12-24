@@ -183,7 +183,8 @@ Thread Safe , fixed size queue
      id := vars("id")
     ```
 - [Decorator + WEB4](https://go/src/github.com/WEB4)
-
+- [Template](https://go/src/github.com/templateW)
+    - Go에는 강력한(?) 내부 template package가 있음
 
 
 - 배포
@@ -194,3 +195,4 @@ Thread Safe , fixed size queue
 - ## Design Pattern
     - [Decorator Pattern](https://go/src/decoratePattern/main.go)
         - 객체에 새로운 행동을 동적으로 첨가해 객체의 기능을 유연하게 확장 시킴
+
