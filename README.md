@@ -128,6 +128,14 @@ Golang에서는 이걸 쉽게 하기위해 channel을 제공함
 
 ## [Channel (Queue)](https://github.com/myungsworld/Go/blob/main/src/Intermediate/factory/main.go)
 Thread Safe , fixed size queue  
+```go
+    var a chan int
+    a = make(chan int,1)
+    //push to chan a
+    a <- 10
+    //Pop from chan a to b
+    b := <- a 
+```
 [select](https://github.com/myungsworld/Go/blob/main/src/Intermediate/select/main.go)
 
 ## OOP  

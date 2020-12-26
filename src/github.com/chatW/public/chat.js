@@ -27,6 +27,8 @@ $(function(){
         })
         $chatmsg.val("")
         $chatmsg.focus()
+        //true로 할시 다른페이지로 넘어감
+        return false;
     });
 
     var addMessage = function(data) {
@@ -38,12 +40,22 @@ $(function(){
         $chatlog.prepend('<div><span>' + text + '</span></div>')
     }
 
-    addMessage({
-        msg : 'hello',
-        name: 'aaa'
-    })
-
-    addMessage({
-        msg : 'hello2'
-    })
+    var es = new EventSource('/stream');
+    es.onopen = function(e) {
+        $.post('/users',{
+            name : username
+        });
+    }
+    es.onmessage = function(e) {
+       var msg = JSON.parse(e.data);
+       addMessage(msg);
+    }
+    // 윈도우가 닫히기 전에 호출
+    window.onbeforeunload = function() {
+       $.ajax({
+           url: "/users?username=" + username,
+           type : "DELETE"
+       });
+       es.close()
+    }
 })
