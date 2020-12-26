@@ -189,7 +189,8 @@ Thread Safe , fixed size queue
     - pat : mux와 비슷한 일을 하는데 좀더 간단한 코드로 구현 가능
     - render : json parsing , html template 간단한 코드로 구현
     - negroni : HTTP Middleware
-
+- [Chat service with eventSource](https://go/src/github.com/chatW)
+    - server-sent events에 대한 웹 콘텐츠 인터페이스(서버에서만 보낼수 있음)
 
 - 배포
     - 도메인 구매 , DNS 등록
