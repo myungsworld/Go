@@ -37,7 +37,6 @@ func (m *memoryHandler) completeTodo(id int, complete bool) bool {
 	return false
 }
 
-//NewMemoryHandler...
 func NewMemoryHandler() dbHandler {
 	m := &memoryHandler{}
 	m.todoMap = make(map[int]*Todo)

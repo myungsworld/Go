@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"github.com/WEB3/myapp"
+	"github.com/restfulW/myapp"
 )
 
 func main() {

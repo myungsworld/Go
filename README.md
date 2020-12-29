@@ -156,7 +156,7 @@ Thread Safe , fixed size queue
             - 확장에는 열려있고 변경에는 닫혀있다.
         - L : Liskop subtitution principle
             - 리스코프 치환 이론 : Base Type의 기존 함수(동작)를 Exprended Type에서도 동일하게 적용이 되어야한다.
-        - [I : Interface segregation principle](https://github.com/myungsworld/Go/blob/main/src/Intermeditae/ood/isp.go)
+        - [I : Interface segregation principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/isp.go)
             - 인터페이스 분리원칙 : 여러개의 관계를 모아놓은 인터페이스보다 관계 하나씩 정의하는게 더 좋다. 
         - [D : Dependency inversion principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/dip.go)
             - 관계는 인터페이스에 의존해야 한다. 객체가 아니라
@@ -179,9 +179,9 @@ Thread Safe , fixed size queue
 
 # WEB
 
-- [goconvey => test 환경 구축](https://go/src/github.com/WEB/myapp/app_test.go)  
-- [Static Web Server(File upload)](https://go/src/github.com/com/WEB2)
-- [RestfulAPI](https://go/src/github.com/WEB3)
+- [goconvey => test 환경 구축](https://github.com/myungsworld/Go/tree/main/src/github.com/WEB)  
+- [Static Web Server(File upload)](https://github.com/myungsworld/Go/tree/main/src/github.com/fileserver)
+- [RestfulAPI](https://github.com/myungsworld/Go/tree/main/src/github.com/restfulW)
     - 자원에 대한 CRUD 조작을 URL에다가 표시
     - gorilla/mux => 자동으로 파싱시켜주는 외부 패키지, CRUD 조작을 쉽게 도와줌
     
@@ -190,27 +190,27 @@ Thread Safe , fixed size queue
      vars := mux.Vars(r) , id := vars("id")
      id := vars("id")
     ```
-- [Decorator + WEB4](https://go/src/github.com/WEB4)
-- [Template](https://go/src/github.com/templateW)
+- [Decorator + WEB4](https://github.com/myungsworld/Go/tree/main/src/github.com/WEB4)
+- [Template](https://github.com/myungsworld/Go/tree/main/src/github.com/templateW)
     - Go에는 강력한(?) 내부 template package가 있음
 - [Render,Pat,Negroni 외부패키지](https://go/src/github.com/packageW)
     - pat : mux와 비슷한 일을 하는데 좀더 간단한 코드로 구현 가능
     - render : json parsing , html template 간단한 코드로 구현
     - negroni : HTTP Middleware
-- [Chat service with eventSource](https://go/src/github.com/chatW)
+- [Chat service with eventSource](https://github.com/myungsworld/Go/tree/main/src/github.com/chatW)
     - server-sent events에 대한 웹 콘텐츠 인터페이스(서버에서만 보낼수 있음)
-- [Oauth](https://go/src/github.com/Oauth)
+- [Oauth](https://github.com/myungsworld/Go/tree/main/src/github.com/Oauth)
     - go get golang.org/x/oauth2
     - go get cloud.google.com/go  
-- [TodoList](https://go/src/github.com/todolistW)
-    - [Refactoring Handler](https://go/src/github.com/todolistW/model)
+- [TodoList](https://github.com/myungsworld/Go/tree/main/src/github.com/todolistW)
+    - [Refactoring Handler](https://github.com/myungsworld/Go/tree/main/src/github.com/todolistW/model)
 - 배포
     - 도메인 구매 , DNS 등록
     - 개인 IP는 ISP(Internet Service Provider) 가 제공한 동적 IP 할당함으로 Private 이다.  따라서 외부에서 접속이 불가
     - Public IP를 받으려면 호스팅을 받아야 한다. 그중 클라우드 서비스를 많이 사용 IaaS(Infrasturct as a Service)
 
 - ## Design Pattern
-    - [Decorator Pattern](https://go/src/decoratePattern/main.go)
+    - [Decorator Pattern](https://github.com/myungsworld/Go/blob/main/src/decoratePattern/main.go)
         - 객체에 새로운 행동을 동적으로 첨가해 객체의 기능을 유연하게 확장 시킴
 
 - ## TDD(Test Driven Development(테스트 주도 개발))
