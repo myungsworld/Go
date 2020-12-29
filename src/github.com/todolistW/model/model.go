@@ -19,8 +19,8 @@ type dbHandler interface {
 var handler dbHandler
 
 func init() {
-	handler = NewMemoryHandler()
-
+	//handler = NewMemoryHandler()
+	handler = NewSqliteHandler()
 }
 
 func GetTodos() []*Todo {
