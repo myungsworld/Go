@@ -213,3 +213,7 @@ Thread Safe , fixed size queue
     - [Decorator Pattern](https://go/src/decoratePattern/main.go)
         - 객체에 새로운 행동을 동적으로 첨가해 객체의 기능을 유연하게 확장 시킴
 
+- ## TDD(Test Driven Development(테스트 주도 개발))
+    - 기존의 설계 -> 구현 -> 테스트 방식이 아닌 테스트부터 하면서 코딩하는 방법
+    - WEB 쪽에있는 모든 코드가 TDD방식 
+    - 장점: 유지보수가 뛰어나다, test가 촘촘하게 이루어져 있을수록 에러잡기가 수월하다.

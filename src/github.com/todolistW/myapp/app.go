@@ -3,23 +3,14 @@ package myapp
 import (
 	"net/http"
 	"strconv"
-	"time"
 
+	"github.com/todolistW/model"
 	"github.com/unrolled/render"
 
 	"github.com/urfave/negroni"
 
 	"github.com/gorilla/mux"
 )
-
-type Todo struct {
-	ID        int       `json:"id"`
-	Name      string    `json:"name"`
-	Completed bool      `json:"completed"`
-	CreatedAt time.Time `json:"created_at"`
-}
-
-var todoMap map[int]*Todo
 
 var rd *render.Render
 
@@ -28,18 +19,20 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func getTodoListHandler(w http.ResponseWriter, r *http.Request) {
-	list := []*Todo{}
-	for _, v := range todoMap {
-		list = append(list, v)
-	}
+	// list := []*Todo{}
+	// for _, v := range todoMap {
+	// 	list = append(list, v)
+	// }
+	list := model.GetTodos()
 	rd.JSON(w, http.StatusOK, list)
 }
 
 func addTodoHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.FormValue("name")
-	id := len(todoMap) + 1
-	todo := &Todo{id, name, false, time.Now()}
-	todoMap[id] = todo
+	// id := len(todoMap) + 1
+	// todo := &Todo{id, name, false, time.Now()}
+	// todoMap[id] = todo
+	todo := model.AddTodo(name)
 	rd.JSON(w, http.StatusCreated, todo)
 }
 
@@ -50,24 +43,36 @@ type Sucess struct {
 func removeTodoHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, _ := strconv.Atoi(vars["id"])
-	if _, ok := todoMap[id]; ok {
-		delete(todoMap, id)
+	ok := model.RemoveTodo(id)
+	if ok {
 		rd.JSON(w, http.StatusOK, Sucess{true})
 	} else {
 		rd.JSON(w, http.StatusOK, Sucess{false})
 	}
+	// if _, ok := todoMap[id]; ok {
+	// 	delete(todoMap, id)
+	// 	rd.JSON(w, http.StatusOK, Sucess{true})
+	// } else {
+	// 	rd.JSON(w, http.StatusOK, Sucess{false})
+	// }
 }
 
 func completeTodoHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id, _ := strconv.Atoi(vars["id"])
 	complete := r.FormValue("complete") == "true"
-	if todo, ok := todoMap[id]; ok {
-		todo.Completed = complete
+	ok := model.CompleteTodo(id, complete)
+	if ok {
 		rd.JSON(w, http.StatusOK, Sucess{true})
 	} else {
 		rd.JSON(w, http.StatusOK, Sucess{false})
 	}
+	// if todo, ok := todoMap[id]; ok {
+	// 	todo.Completed = complete
+	// 	rd.JSON(w, http.StatusOK, Sucess{true})
+	// } else {
+	// 	rd.JSON(w, http.StatusOK, Sucess{false})
+	// }
 
 }
 
@@ -78,7 +83,7 @@ func completeTodoHandler(w http.ResponseWriter, r *http.Request) {
 // }
 
 func MakeNewHandler() http.Handler {
-	todoMap = make(map[int]*Todo)
+	//todoMap = make(map[int]*Todo)
 	rd = render.New()
 	// testTodos()
 	r := mux.NewRouter()
