@@ -180,8 +180,8 @@ Thread Safe , fixed size queue
 # WEB
 
 - [goconvey => test 환경 구축](https://github.com/myungsworld/Go/tree/main/src/github.com/WEB)  
-- [Static Web Server(File upload)](https://github.com/myungsworld/Go/tree/main/src/github.com/fileserver)
-- [RestfulAPI](https://github.com/myungsworld/Go/tree/main/src/github.com/restfulW)
+- [Static Web Server(File upload)](https://github.com/myungsworld/Go/tree/main/src/github.com/WEB2)
+- [RestfulAPI](https://github.com/myungsworld/Go/tree/main/src/github.com/WEB3)
     - 자원에 대한 CRUD 조작을 URL에다가 표시
     - gorilla/mux => 자동으로 파싱시켜주는 외부 패키지, CRUD 조작을 쉽게 도와줌
     
@@ -193,7 +193,7 @@ Thread Safe , fixed size queue
 - [Decorator + WEB4](https://github.com/myungsworld/Go/tree/main/src/github.com/WEB4)
 - [Template](https://github.com/myungsworld/Go/tree/main/src/github.com/templateW)
     - Go에는 강력한(?) 내부 template package가 있음
-- [Render,Pat,Negroni 외부패키지](https://go/src/github.com/packageW)
+- [Render,Pat,Negroni 외부패키지](ttps://github.com/myungsworld/Go/tree/main/src/github.com/packageW)
     - pat : mux와 비슷한 일을 하는데 좀더 간단한 코드로 구현 가능
     - render : json parsing , html template 간단한 코드로 구현
     - negroni : HTTP Middleware

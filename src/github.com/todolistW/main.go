@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	m := myapp.MakeNewHandler("./test.db")
+	m := myapp.MakeHandler("./test.db")
 	defer m.Close()
 
 	err := http.ListenAndServe(":3000", m)

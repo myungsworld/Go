@@ -15,9 +15,12 @@ import (
 )
 
 func TestTodos(t *testing.T) {
+	getSessionID = func(r *http.Request) string {
+		return "testsesionID"
+	}
 	os.Remove("./test.db")
 	assert := assert.New(t)
-	ah := MakeNewHandler()
+	ah := MakeHandler("./test.db")
 	defer ah.Close()
 	ts := httptest.NewServer(ah)
 	defer ts.Close()

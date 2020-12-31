@@ -23,12 +23,13 @@ type AppHandler struct {
 	db model.DBHandler
 }
 
-//signin에서 session이 저장되면 indexhandler가 호출될때 SessionID를 읽어와야함
-func getSessionID(r *http.Request) string {
+var getSessionID = func(r *http.Request) string {
 	session, err := store.Get(r, "session")
 	if err != nil {
 		return ""
 	}
+
+	// Set some session values.
 	val := session.Values["id"]
 	if val == nil {
 		return ""
@@ -41,25 +42,20 @@ func (a *AppHandler) indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *AppHandler) getTodoListHandler(w http.ResponseWriter, r *http.Request) {
-	// list := []*Todo{}
-	// for _, v := range todoMap {
-	// 	list = append(list, v)
-	// }
-	list := a.db.GetTodos()
+	sessionID := getSessionID(r)
+	list := a.db.GetTodos(sessionID)
 	rd.JSON(w, http.StatusOK, list)
 }
 
 func (a *AppHandler) addTodoHandler(w http.ResponseWriter, r *http.Request) {
+	sessionID := getSessionID(r)
 	name := r.FormValue("name")
-	// id := len(todoMap) + 1
-	// todo := &Todo{id, name, false, time.Now()}
-	// todoMap[id] = todo
-	todo := a.db.AddTodo(name)
+	todo := a.db.AddTodo(name, sessionID)
 	rd.JSON(w, http.StatusCreated, todo)
 }
 
-type Sucess struct {
-	Delete bool `json:"delete"`
+type Success struct {
+	Success bool `json:"success"`
 }
 
 func (a *AppHandler) removeTodoHandler(w http.ResponseWriter, r *http.Request) {
@@ -67,16 +63,10 @@ func (a *AppHandler) removeTodoHandler(w http.ResponseWriter, r *http.Request) {
 	id, _ := strconv.Atoi(vars["id"])
 	ok := a.db.RemoveTodo(id)
 	if ok {
-		rd.JSON(w, http.StatusOK, Sucess{true})
+		rd.JSON(w, http.StatusOK, Success{true})
 	} else {
-		rd.JSON(w, http.StatusOK, Sucess{false})
+		rd.JSON(w, http.StatusOK, Success{false})
 	}
-	// if _, ok := todoMap[id]; ok {
-	// 	delete(todoMap, id)
-	// 	rd.JSON(w, http.StatusOK, Sucess{true})
-	// } else {
-	// 	rd.JSON(w, http.StatusOK, Sucess{false})
-	// }
 }
 
 func (a *AppHandler) completeTodoHandler(w http.ResponseWriter, r *http.Request) {
@@ -85,17 +75,10 @@ func (a *AppHandler) completeTodoHandler(w http.ResponseWriter, r *http.Request)
 	complete := r.FormValue("complete") == "true"
 	ok := a.db.CompleteTodo(id, complete)
 	if ok {
-		rd.JSON(w, http.StatusOK, Sucess{true})
+		rd.JSON(w, http.StatusOK, Success{true})
 	} else {
-		rd.JSON(w, http.StatusOK, Sucess{false})
+		rd.JSON(w, http.StatusOK, Success{false})
 	}
-	// if todo, ok := todoMap[id]; ok {
-	// 	todo.Completed = complete
-	// 	rd.JSON(w, http.StatusOK, Sucess{true})
-	// } else {
-	// 	rd.JSON(w, http.StatusOK, Sucess{false})
-	// }
-
 }
 
 func (a *AppHandler) Close() {
@@ -103,45 +86,46 @@ func (a *AppHandler) Close() {
 }
 
 func CheckSignin(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
-
-	//유저가 처음에 로그인을 하려고 한다면
+	// if request URL is /signin.html, then next()
 	if strings.Contains(r.URL.Path, "/signin") ||
 		strings.Contains(r.URL.Path, "/auth") {
 		next(w, r)
 		return
 	}
 
-	//유저가 로그인을 했다면
-	sessionID := getSessionID(r)
-	if sessionID != "" {
+	// if user already signed in
+	sessionId := getSessionID(r)
+	if sessionId != "" {
 		next(w, r)
 		return
 	}
 
-	//유저가 로그인을 하지 않았다면
+	// if not user sign in
+	// redirect singin.html
 	http.Redirect(w, r, "/signin.html", http.StatusTemporaryRedirect)
-
 }
 
-func MakeNewHandler(filepath string) *AppHandler {
-
+func MakeHandler(filepath string) *AppHandler {
 	r := mux.NewRouter()
-
-	// session에서 가져온 id가 없으면 로그인 화면
-	// id가 있으면 다음 => decoreate pattern
-	n := negroni.New(NewRecovery(), NewLogger(), negroni.HandlerFunc(CheckSignin), NewStatic(http.Dir("public")))
+	n := negroni.New(
+		negroni.NewRecovery(),
+		negroni.NewLogger(),
+		negroni.HandlerFunc(CheckSignin),
+		negroni.NewStatic(http.Dir("public")))
 	n.UseHandler(r)
+
 	a := &AppHandler{
 		Handler: n,
 		db:      model.NewDBHandler(filepath),
 	}
-	r.HandleFunc("/", a.indexHandler)
+
 	r.HandleFunc("/todos", a.getTodoListHandler).Methods("GET")
 	r.HandleFunc("/todos", a.addTodoHandler).Methods("POST")
 	r.HandleFunc("/todos/{id:[0-9]+}", a.removeTodoHandler).Methods("DELETE")
 	r.HandleFunc("/complete-todo/{id:[0-9]+}", a.completeTodoHandler).Methods("GET")
 	r.HandleFunc("/auth/google/login", googleLoginHandler)
 	r.HandleFunc("/auth/google/callback", googleAuthCallback)
+	r.HandleFunc("/", a.indexHandler)
 
 	return a
 }
