@@ -206,8 +206,9 @@ Thread Safe , fixed size queue
     - [Refactoring Handler](https://github.com/myungsworld/Go/tree/main/src/github.com/todolistW/model)
     - [SQLiteDB Handler](https://github.com/myungsworld/Go/tree/main/src/github.com/todolistW/model/sqliteHandler.go)
     - [Oauth, Session](https://github.com/myungsworld/Go/tree/main/src/github.com/todolistW/myapp/signin.go)
+- [Web Socket]()    
  
-- 배포
+- [배포](https://www.youtube.com/watch?v=Samw30ZlkuU&list=PLy-g2fnSzUTDALoERcKDniql16SAaQYHF&index=24)
     - 도메인 구매 , DNS 등록
     - 개인 IP는 ISP(Internet Service Provider) 가 제공한 동적 IP 할당함으로 Private 이다.  따라서 외부에서 접속이 불가
     - Public IP를 받으려면 호스팅을 받아야 한다. 그중 클라우드 서비스를 많이 사용 IaaS(Infrasturct as a Service)
