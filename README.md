@@ -1,7 +1,8 @@
 # Go
 
 1. [Go Basic](#Garbage-Collector)
-2. [Go Web Programming](#WEB)
+2. [Data Struct](#자료구조)
+3. [Go Web Programming](#WEB)
 
 ## Garbage Collector
 
