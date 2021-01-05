@@ -222,3 +222,10 @@ Thread Safe , fixed size queue
     - 기존의 설계 -> 구현 -> 테스트 방식이 아닌 테스트부터 하면서 코딩하는 방법
     - WEB 쪽에있는 모든 코드가 TDD방식 
     - 장점: 유지보수가 뛰어나다, test가 촘촘하게 이루어져 있을수록 에러잡기가 수월하다.
+
+- ## Data Store
+    - [In-Memory Storage](https://github.com/myungsworld/Go/blob/main/src/dataStore/inmemory/main.go)
+        - 앱이 실행되는 동안에 사용 , 디스크를 사용하지 않아 동작이 빠르고 즉각적이지만 영구적으로 사용이 불가능하다
+    - [file Storage](https://github.com/myungsworld/Go/blob/main/src/dataStore/fileStorage)
+        - CSV : 데이터의 목적에 맞게 디코딩하여 사용
+
