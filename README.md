@@ -156,7 +156,7 @@ Thread Safe , fixed size queue
         - [O : Open closed principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/srp.go)
             - 확장에는 열려있고 변경에는 닫혀있다.
         - L : Liskop subtitution principle
-            - 리스코프 치환 이론 : Base Type의 기존 함수(동작)를 Exprended Type에서도 동일하게 적용이 되어야한다.
+            - 리스코프 치환 이론 : Base Type의 기존 함수(동작)를 Extended Type에서도 동일하게 적용이 되어야한다.
         - [I : Interface segregation principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/isp.go)
             - 인터페이스 분리원칙 : 여러개의 관계를 모아놓은 인터페이스보다 관계 하나씩 정의하는게 더 좋다. 
         - [D : Dependency inversion principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/dip.go)
@@ -228,4 +228,4 @@ Thread Safe , fixed size queue
         - 앱이 실행되는 동안에 사용 , 디스크를 사용하지 않아 동작이 빠르고 즉각적이지만 영구적으로 사용이 불가능하다
     - [file Storage](https://github.com/myungsworld/Go/blob/main/src/dataStore/fileStorage)
         - CSV : 데이터의 목적에 맞게 디코딩하여 사용
-
+        - god 패키지 : 인코딩과 디코딩

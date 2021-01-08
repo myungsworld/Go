@@ -32,11 +32,11 @@ func main() {
 	fmt.Println(PostById[1])
 	fmt.Println(PostById[2])
 
-	for _, post := range PostsByAuthor["song"] {
+	for _, post := range PostsByAuthor["myung"] {
 		fmt.Println(post)
 	}
 
-	for _, post := range PostsByAuthor["myung"] {
+	for _, post := range PostsByAuthor["jjang"] {
 		fmt.Println(post)
 	}
 }
