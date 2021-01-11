@@ -237,3 +237,10 @@ Thread Safe , fixed size queue
         - god 패키지 : 인코딩과 디코딩
     - [Database](https://github.com/myungsworld/Go/blob/main/src/dataStore/database)
         - SQL , NoSQL
+
+- ## AWS
+    - [Lambda]()
+        - go get github.com/aws/aws-lambda-go/lambda
+        - GOOS=linux go build -o main : 리눅스 바이너리 파일로 빌드
+        - 압축한다음 AWS lambda function에 넣고 Test
+        
