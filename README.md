@@ -165,7 +165,9 @@ Thread Safe , fixed size queue
             - 인터페이스 분리원칙 : 여러개의 관계를 모아놓은 인터페이스보다 관계 하나씩 정의하는게 더 좋다. 
         - [D : Dependency inversion principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/dip.go)
             - 관계는 인터페이스에 의존해야 한다. 객체가 아니라
-
+- [ORM]()
+    - 객체와 데이터베이스를 연결(맵핑)
+    - go get github.com/jinzhu/gorm
 - ## Beyond OOP
     - Micro Service
     - Serverless
@@ -233,3 +235,5 @@ Thread Safe , fixed size queue
     - [file Storage](https://github.com/myungsworld/Go/blob/main/src/dataStore/fileStorage)
         - CSV : 데이터의 목적에 맞게 디코딩하여 사용
         - god 패키지 : 인코딩과 디코딩
+    - [Database](https://github.com/myungsworld/Go/blob/main/src/dataStore/database)
+        - SQL , NoSQL
