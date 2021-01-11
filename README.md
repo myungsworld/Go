@@ -125,6 +125,8 @@ Go 에서는 OS의 CPU의 개수만큼 쓰레드를 만들고 각 OS의 쓰레�
 프로그래머 입장에서 Context switching을 상관쓰지 않아도 됨 (다른 언어보다)  
 [병렬 프로그래밍](https://lynlab.co.kr/blog/82)
 
+**레이스 컨디션**
+전역 변수가 있을 때 여러 프로세스가 동시에 접근하려 하면서 서로 경쟁하는 상태
 여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://github.com/myungsworld/Go/blob/main/src/Intermediate/account/main.go))  
 Golang에서는 이걸 쉽게 하기위해 channel을 제공함 => 동기화 제어
 
