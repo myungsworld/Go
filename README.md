@@ -246,6 +246,18 @@ Thread Safe , fixed size queue
         - 압축한다음 AWS lambda function에 넣고 Test
 - ## Framework
     - [echo](https://github.com/myungsworld/Go/blob/main/src/echoframework/main.go)
+    - io.ReadWriter의 content를 보존하는 법
+```go
+        var bodyBytes []byte
+	    if c.Request().Body != nil {
+		    bodyBytes, _ = ioutil.ReadAll(c.Request().Body)
+	    }   
+	    c.Request().Body = ioutil.NopCloser(bytes.NewBuffer(bodyBytes))
+```
+c.Request().Body는 io.ReadCloser type 이라서 bodyBytes는 빈공간이 남게된다.  
+따라서 빈공간에 다시 새로운 버퍼를 넣어서 읽을수 있게 만들어줌  
+
+        
         
 - ## [JWT](https://github.com/myungsworld/Go/blob/main/src/jwt/login.go)
     - JSON 객체로 당사자간의 정보를 안정하게 전송하기 위한 방법
