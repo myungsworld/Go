@@ -240,7 +240,7 @@ Thread Safe , fixed size queue
         - SQL , NoSQL
 
 - ## AWS
-    - [Lambda]()
+    - [Lambda](https://github.com/myungsworld/Go/blob/main/src/aws/lambda-functions/main.go)
         - go get github.com/aws/aws-lambda-go/lambda
         - GOOS=linux go build -o main : 리눅스 바이너리 파일로 빌드
         - 압축한다음 AWS lambda function에 넣고 Test
