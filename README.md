@@ -245,9 +245,9 @@ Thread Safe , fixed size queue
         - GOOS=linux go build -o main : 리눅스 바이너리 파일로 빌드
         - 압축한다음 AWS lambda function에 넣고 Test
 - ## Framework
-    - [echo]()
+    - [echo](https://github.com/myungsworld/Go/blob/main/src/echoframework/main.go)
         
-- ## [JWT]()
+- ## [JWT](https://github.com/myungsworld/Go/blob/main/src/jwt/login.go)
     - JSON 객체로 당사자간의 정보를 안정하게 전송하기 위한 방법
         - 상태 비저장 => 불투명 토큰과 달리 데이터베이스에 저장할 필요가 없음
         - 일정기간이 지나면 무효로 설정가능 => XSS 공격 방지
