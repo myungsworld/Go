@@ -65,6 +65,21 @@ func readCookie(c echo.Context) error {
 	return c.String(http.StatusOK, "쿠키 값"+cookie.Value)
 }
 
+type User struct {
+	Name  string `json:"name" form:"name" query:"name"`
+	Email string `json:"email" form"email" query:"email"`
+}
+
+func bindHandler(c echo.Context) (err error) {
+	user := &User{Name: "song", Email: "myungsowlrd@gmail.com"}
+
+	// u := new(User)
+	if err = c.Bind(user); err != nil {
+		return
+	}
+	return c.JSON(http.StatusOK, user)
+}
+
 func main() {
 	e := echo.New()
 
@@ -78,7 +93,7 @@ func main() {
 	e.POST("/usertt", createUser)
 	e.GET("/setcookie", writeCookie)
 	e.GET("/readcookie", readCookie)
-
+	e.GET("/bind", bindHandler)
 	err := e.Start(":8000")
 	if err != nil {
 		e.Logger.Fatal(err)
