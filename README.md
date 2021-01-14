@@ -246,7 +246,8 @@ Thread Safe , fixed size queue
         - 압축한다음 AWS lambda function에 넣고 Test
 - ## Framework
     - [echo](https://github.com/myungsworld/Go/blob/main/src/echoframework/main.go)
-    - io.ReadWriter의 content를 보존하는 법
+    - [StockAPI](https://github.com/myungsworld/Go/blob/main/src/stock/controllers/price.go)
+    io.ReadWriter의 content를 보존하는 법
 ```go
         var bodyBytes []byte
 	    if c.Request().Body != nil {
