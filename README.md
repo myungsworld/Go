@@ -226,7 +226,8 @@ Thread Safe , fixed size queue
         - 객체에 새로운 행동을 동적으로 첨가해 객체의 기능을 유연하게 확장 시킴
     - [Singleton Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/singletonPattern/main.go)
         - 프로그램 내부에서 특정 클래스에 대해 하나의 인스턴스만 존재하도록 강제하는 디자인 패턴
-
+    - [Factory method Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/factoryPattern/main.go)
+        - 메서드의 구현을 서브 클래스에 위임하는 방식
 - ## TDD(Test Driven Development(테스트 주도 개발))
     - 기존의 설계 -> 구현 -> 테스트 방식이 아닌 테스트부터 하면서 코딩하는 방법
     - WEB 쪽에있는 모든 코드가 TDD방식 
