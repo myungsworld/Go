@@ -222,8 +222,10 @@ Thread Safe , fixed size queue
     - Public IP를 받으려면 호스팅을 받아야 한다. 그중 클라우드 서비스를 많이 사용 IaaS(Infrasturct as a Service)
 
 - ## Design Pattern
-    - [Decorator Pattern](https://github.com/myungsworld/Go/blob/main/src/decoratePattern/main.go)
+    - [Decorator Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/decoratePattern/main.go)
         - 객체에 새로운 행동을 동적으로 첨가해 객체의 기능을 유연하게 확장 시킴
+    - [Singleton Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/singletonPattern/main.go)
+        - 프로그램 내부에서 특정 클래스에 대해 하나의 인스턴스만 존재하도록 강제하는 디자인 패턴
 
 - ## TDD(Test Driven Development(테스트 주도 개발))
     - 기존의 설계 -> 구현 -> 테스트 방식이 아닌 테스트부터 하면서 코딩하는 방법
