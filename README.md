@@ -126,6 +126,7 @@ Go 에서는 OS의 CPU의 개수만큼 쓰레드를 만들고 각 OS의 쓰레�
 [병렬 프로그래밍](https://lynlab.co.kr/blog/82)
 고루틴은 백그라운드에서 비동기적으로 실행되며 프로그램은 고루틴이 끝날 때까지 기다려주지 않는다. -> sync.WaitGroup 활용
 
+
 **레이스 컨디션**
 전역 변수가 있을 때 여러 프로세스가 동시에 접근하려 하면서 서로 경쟁하는 상태
 여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://github.com/myungsworld/Go/blob/main/src/Intermediate/account/main.go))  
@@ -228,6 +229,8 @@ Thread Safe , fixed size queue
         - 프로그램 내부에서 특정 클래스에 대해 하나의 인스턴스만 존재하도록 강제하는 디자인 패턴
     - [Factory method Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/factoryPattern/main.go)
         - 메서드의 구현을 서브 클래스에 위임하는 방식
+    - [Concurrency Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/concurrencyPattern)
+        - 
 - ## TDD(Test Driven Development(테스트 주도 개발))
     - 기존의 설계 -> 구현 -> 테스트 방식이 아닌 테스트부터 하면서 코딩하는 방법
     - WEB 쪽에있는 모든 코드가 TDD방식 
