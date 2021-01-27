@@ -27,7 +27,11 @@ func Example_modifyBytes(){
     // 각나다
 }
 ```
-    
+
+- strings.Split(a,b) []string
+    - 문자열을 b를 기준으로 나눠 슬라이스로 만듬
+- strings.Index(a,b) int
+    - b가 a의 몇번째에 포함되어 있는지 확인, 포함이 되어 있지 않다면 -1을 리턴
 **어떤 문자들이 들어 있는지를 중요시 한다면 string**  
 **실제 바이트 표현이 어떤지를 중시한다면 []byte**  
 
