@@ -65,7 +65,7 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
 
 - [slice의 삽입](https://github.com/myungsworld/Go/blob/main/src/DiscoveryGo/3./prac2/main.go)
 
-## [Map](https://github.com/myungsworld/Go/blob/main/src/dataStruct/map.go)
+## [Map](https://github.com/myungsworld/Go/blob/main/src/DiscoveryGo/3./%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/5./main.go)
 Key-Value 값으로 저장되는 배열  
 ```go
     m := make(map[int]int)
