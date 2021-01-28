@@ -10,6 +10,8 @@ import (
 func main() {
 	f, err := os.OpenFile(
 		"hello.txt",
+
+		//파일 없으면 생성
 		os.O_CREATE|os.O_RDWR|os.O_TRUNC,
 		os.FileMode(0644))
 	if err != nil {
