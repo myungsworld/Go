@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//같은 원소가 여러번 들어갈수 있는 집합인 MultiSet을 기본적으로 제공하는 맵을 이용하여 만들기
+
 func NewMultiSet() map[string]int {
 	return map[string]int{}
 }
