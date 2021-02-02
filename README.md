@@ -101,9 +101,9 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
     - X Mod N = M 일때 X의 후보군이 될수있는 값은 무수히 많음  
     - 이러한 구조때문에 암호화가 가능
 
-- ## [구조체 내장](https://github.com/myungsworld/Go/tree/main/src/DiscoveryGo/5./%EA%B5%AC%EC%A1%B0%EC%B2%B4%EB%82%B4%EC%9E%A5)
+- [구조체 내장](https://github.com/myungsworld/Go/tree/main/src/DiscoveryGo/5./%EA%B5%AC%EC%A1%B0%EC%B2%B4%EB%82%B4%EC%9E%A5)
     - 구조체를 내장하게 되면 내장된 구조체에 들어있는 필드들도 바르 접근이 가능하다.
-
+- [직렬화 및 역직렬화]()
 
 ##  자료구조
 
