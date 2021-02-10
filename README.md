@@ -288,32 +288,12 @@ Thread Safe , fixed size queue
 - ## Framework
     - **[gin]**(https://github.com/gin-gonic/gin)
         - Basic Grammer
-```go
-// Query + Post form
-// POST /post?id=1234&page=1 HTTP/1.1
-// Content-Type: application/x-www-form-urlencoded
+            - [기본 Query + Post Form]()
+            - [Map을 이용한 Query, POST]()
+            - [Upload File]()
 
-// name=manu&message=this_is_great
-func main() {
-	router := gin.Default()
-
-	router.POST("/post", func(c *gin.Context) {
-
-		id := c.Query("id")
-		page := c.DefaultQuery("page", "0")
-		name := c.PostForm("name")
-		message := c.PostForm("message")
-
-		fmt.Printf("id: %s; page: %s; name: %s; message: %s", id, page, name, message)
-	})
-	router.Run(":8080")
-}
-// id: 1234; page: 1; name: manu; message: this_is_great
-```
-
-
-    - [echo](https://github.com/myungsworld/Go/blob/main/src/echoframework/main.go)
-    - [StockAPI](https://github.com/myungsworld/Go/blob/main/src/stock/controllers/price.go)
+- [echo](https://github.com/myungsworld/Go/blob/main/src/echoframework/main.go)
+- [StockAPI](https://github.com/myungsworld/Go/blob/main/src/stock/controllers/price.go)
     io.ReadWriter의 content를 보존하는 법
 ```go
         var bodyBytes []byte
