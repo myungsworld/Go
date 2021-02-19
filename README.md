@@ -202,9 +202,11 @@ Thread Safe , fixed size queue
             - 인터페이스 분리원칙 : 여러개의 관계를 모아놓은 인터페이스보다 관계 하나씩 정의하는게 더 좋다. 
         - [D : Dependency inversion principle](https://github.com/myungsworld/Go/blob/main/src/Intermediate/ood/dip.go)
             - 관계는 인터페이스에 의존해야 한다. 객체가 아니라
-- [ORM]()
+- [GORM]()
     - 객체와 데이터베이스를 연결(맵핑)
     - go get github.com/jinzhu/gorm
+    - 단일 object 검색
+    - db.First(&테이블이름)
 - ## Beyond OOP
     - Micro Service
     - Serverless
