@@ -208,7 +208,7 @@ Thread Safe , fixed size queue
     - 단일 object 검색
     	- db.First(&테이블이름)
     - FK 적용
- ```go
+ ```go 
  type Party {
  	Id            int          `json:"id" gorm:"primaryKey;autoIncrement"`
 	UserId        int          `json:"user_id"`
