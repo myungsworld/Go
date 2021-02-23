@@ -204,9 +204,17 @@ Thread Safe , fixed size queue
             - 관계는 인터페이스에 의존해야 한다. 객체가 아니라
 - [GORM]()
     - 객체와 데이터베이스를 연결(맵핑)
-    - go get github.com/jinzhu/gorm
+    	- go get github.com/jinzhu/gorm
     - 단일 object 검색
-    - db.First(&테이블이름)
+    	- db.First(&테이블이름)
+    - FK 적용
+ ```go
+ type Party {
+ 	Id            int          `json:"id" gorm:"primaryKey;autoIncrement"`
+	UserId        int          `json:"user_id"`
+	User          *User        `json:"user" gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+}
+```   
 - ## Beyond OOP
     - Micro Service
     - Serverless
