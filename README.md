@@ -210,7 +210,7 @@ Thread Safe , fixed size queue
     - FK 적용
  ```go 
  type Party {
-	Id	      int          `json:"id" gorm:"primaryKey;autoIncrement"`
+	Id            int          `json:"id" gorm:"primaryKey;autoIncrement"`
 	UserId        int          `json:"user_id"`
 	User          *User        `json:"user" gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }
