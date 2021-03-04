@@ -162,16 +162,16 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
    - 고루틴은 백그라운드에서 비동기적으로 실행되며 프로그램은 고루틴이 끝날 때까지 기다려주지 않는다. -> sync.WaitGroup 활용  
 
 
-**레이스 컨디션**  
-전역 변수가 있을 때 여러 프로세스가 동시에 접근하려 하면서 서로 경쟁하는 상태  
-여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://github.com/myungsworld/Go/blob/main/src/Intermediate/account/main.go))  
-Golang에서는 이걸 쉽게 하기위해 channel을 제공함 => 동기화 제어  
+- **레이스 컨디션**  
+	- 전역 변수가 있을 때 여러 프로세스가 동시에 접근하려 하면서 서로 경쟁하는 상태  
+	- 여러 쓰레드가 같은 메모리 영역을 건드릴때는 Lock을 사용 ([Mutex](https://github.com/myungsworld/Go/blob/main/src/Intermediate/account/main.go))  
+	- Golang에서는 이걸 쉽게 하기위해 channel을 제공함 => 동기화 제어  
 
-**동시성과 병렬성의 차이**  
-- Concurrency(동시성)
-	- 여러 작업이 동시에 일어날수 있음을 의미함  
-- Parallelism(병렬성) 
-	- 하나의 작업이 여러 하위 작업으로 나뉘어서 동시에 수행됨을 의미함  
+- **동시성과 병렬성의 차이**  
+	- Concurrency(동시성)
+		- 여러 작업이 동시에 일어날수 있음을 의미함  
+	- Parallelism(병렬성) 
+		- 하나의 작업이 여러 하위 작업으로 나뉘어서 동시에 수행됨을 의미함  
 
 ## [Channel (Queue)](https://github.com/myungsworld/Go/blob/main/src/Intermediate/factory/main.go)
 Thread Safe , fixed size queue  
