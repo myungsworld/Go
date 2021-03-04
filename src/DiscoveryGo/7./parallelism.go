@@ -19,6 +19,7 @@ func Min(a []int) int {
 	return min
 }
 
+// 기존 최소값을 찾는 함수에서 goroutine으로 작업을 더 세분화 하여 여러개의 스레드를 가지고 최소값 찾는 방법
 func ParallelMin(a []int, n int) int {
 	if len(a) < n {
 		return Min(a)
