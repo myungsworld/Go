@@ -338,3 +338,26 @@ c.Request().Body는 io.ReadCloser type 이라서 bodyBytes는 빈공간이 남�
     	-  사용된 암호화 알고리즘과 설정한 claim 을 가지고 토큰을 만든다.
     	-  그 토큰을 가지고 회원가입등을 하고 여러 인증에 사용한다.
     	-  인증 : 사용자로부터 받은 토큰을 파싱해서 유효성 검사
+
+- ## [Swagger]()
+	- API를 태그별로 나누고 사용하는 방법을 명시해놓은 문서(아주 편리)
+	
+```go
+// @tags api/something/happen
+// @Summary 물속안에 뭔가를 생성
+// @Description 물속에 니모 생성 api
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "$access_token"
+// @Param body body ReqNeemo "나이,등등"
+// @Success 200 {object} models.Fish
+// @Failure 400 {object} cerror.CustomError400
+// @Failure 409 {object} cerror.CustomError409
+// @Failure 500 {object} cerror.CustomError500
+// @Router /api/something/happen/in/the/water [POST]
+func CreateNeemo(c *gin.Context) {
+	c.JSON(http.statusOk, gin.H{
+	"fish":"Neemo"
+	})
+}
+```
