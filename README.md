@@ -212,10 +212,12 @@ Thread Safe , fixed size queue
     	- go get github.com/jinzhu/gorm
     - Connection Pool  
     	- connection pool을 사용하기 때문에 단일 데이터베이스에서 두 개의 SQL을 실행하면, 두개의 연결을 사용 해서 동시에 실행 할 수 있다.  
-	- connection pool은 연결이 필요 할 때 자동으로 만들어지며, 자원을 해제하기 위해서 개발자가 개입할 필요가 없다.
-	- 기본적으로 connection 갯수에 제한이 없다. 한번에 많은 일을 하고 싶다면, 많은 연결을 만들 것이다. 다만 데이터베이스가 허용 할 수 있는 연결의 갯수를 넘을 경우 "too many connections"에러가 난다
-    	- db.SetMaxIdleConns(10) : 	
-
+    	- connection pool은 연결이 필요 할 때 자동으로 만들어지며, 자원을 해제하기 위해서 개발자가 개입할 필요가 없다.
+    	- 기본적으로 connection 갯수에 제한이 없다. 한번에 많은 일을 하고 싶다면, 많은 연결을 만들 것이다. 다만 데이터베이스가 허용 할 수 있는 연결의 갯수를 넘을 경우 "too many connections"에러가 난다
+    	- db.SetMaxIdleConns(N) : 이 메서드를 이용해서 유휴 연결을 N개까지 유지 할 수 있다. 유휴 연결이란 사용하지 않은 상태로 남아있는 연결을 의미한다. 유휴 연결은 재사용 할 수 있다.
+    	- 연결을 빠르게 재 사용 할 수 있다. db.SetMaxIdleConns(N)에 의해서 만들어진 유휴연결이 재 사용된다.
+    	- db.SetMaxOpenConns(N) : 이 메서드를 이용해서, 데이터베이스에 대한 최대 연결 갯수를 제한 할 수 있다.
+    	- 오랜 시간 유휴 상태로 남은 연결은 Azure Mysql 등에서 문제가 될 수 있다. 유휴 시간이 오래되면 서버측에서 연결을 끊어버리기 때문으로 이 경우에는 db.SetMaxIdleConns(0)을 설정하면 된다.
  ```go 
  type Party {
 	Id            int          `json:"id" gorm:"primaryKey;autoIncrement"`
