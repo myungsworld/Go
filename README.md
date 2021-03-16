@@ -218,13 +218,7 @@ Thread Safe , fixed size queue
     	- 연결을 빠르게 재 사용 할 수 있다. db.SetMaxIdleConns(N)에 의해서 만들어진 유휴연결이 재 사용된다.
     	- db.SetMaxOpenConns(N) : 이 메서드를 이용해서, 데이터베이스에 대한 최대 연결 갯수를 제한 할 수 있다.
     	- 오랜 시간 유휴 상태로 남은 연결은 Azure Mysql 등에서 문제가 될 수 있다. 유휴 시간이 오래되면 서버측에서 연결을 끊어버리기 때문으로 이 경우에는 db.SetMaxIdleConns(0)을 설정하면 된다.
- ```go 
- type Party {
-	Id            int          `json:"id" gorm:"primaryKey;autoIncrement"`
-	UserId        int          `json:"user_id"`
-	User          *User        `json:"user" gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
-}
-```   
+
 - ## Beyond OOP
     - Micro Service
     - Serverless
