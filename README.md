@@ -281,6 +281,13 @@ Thread Safe , fixed size queue
     	- 실제로 웹을 개발하다보면 다른 출처의 HTTP 요청을 해야하는 경우가 너무나 많음 -> CORS의 필요
     - CORS (Cross Origin Resource Sharing)
     	- Origin(host)를 가로질러 자원에 접근 할 수 있는 권한을 부여하도록 브라우저에 알려주는 정책
+```go
+	r.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{http.MethodGet, http.MethodPost, http.MethodPut, http.MethodPatch, http.MethodDelete},
+		AllowHeaders: []string{"Accept", "Accept-Language", "Content-Language", "Origin", "Content-Type", "Authorization"},
+	}))
+```
  
 - ## Design Pattern
     - [Decorator Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/decoratePattern/main.go)
