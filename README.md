@@ -170,7 +170,7 @@ map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, �
 - **동시성과 병렬성의 차이**  
 	- Concurrency(동시성)
 		- 여러 작업이 동시에 일어날수 있음을 의미함  
-	- [Parallelism(병렬성)](https://github.com/myungsworld/Go/tree-save/main/src/DiscoveryGo/7./parallelism.go) 
+	- [Parallelism(병렬성)](https://github.com/myungsworld/Go/blob/main/src/DiscoveryGo/7./parallelism.go) 
 		- 하나의 작업이 여러 하위 작업으로 나뉘어서 동시에 수행됨을 의미함  
 
 ## [Channel (Queue)](https://github.com/myungsworld/Go/blob/main/src/Intermediate/factory/main.go)
