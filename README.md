@@ -210,9 +210,12 @@ Thread Safe , fixed size queue
 - [GORM]()
     - 객체와 데이터베이스를 연결(맵핑)
     	- go get github.com/jinzhu/gorm
-    - 단일 object 검색
-    	- db.First(&테이블이름)
-    - FK 적용
+    - Connection Pool  
+    	- connection pool을 사용하기 때문에 단일 데이터베이스에서 두 개의 SQL을 실행하면, 두개의 연결을 사용 해서 동시에 실행 할 수 있다.  
+	- connection pool은 연결이 필요 할 때 자동으로 만들어지며, 자원을 해제하기 위해서 개발자가 개입할 필요가 없다.
+	- 기본적으로 connection 갯수에 제한이 없다. 한번에 많은 일을 하고 싶다면, 많은 연결을 만들 것이다. 다만 데이터베이스가 허용 할 수 있는 연결의 갯수를 넘을 경우 "too many connections"에러가 난다
+    	- db.SetMaxIdleConns(10) : 	
+
  ```go 
  type Party {
 	Id            int          `json:"id" gorm:"primaryKey;autoIncrement"`
@@ -306,6 +309,7 @@ Thread Safe , fixed size queue
             - [기본 Query + Post Form](https://github.com/myungsworld/Go/tree/main/src/gin/queryPostForm/main.go)
             - [Map을 이용한 Query, POST](https://github.com/myungsworld/Go/blob/main/src/gin/mapQueryPost/main.go)
             - [Upload File](https://github.com/myungsworld/Go/tree/main/src/gin/uploadFile)
+
 
 - [echo](https://github.com/myungsworld/Go/blob/main/src/echoframework/main.go)
 - [StockAPI](https://github.com/myungsworld/Go/blob/main/src/stock/controllers/price.go)
