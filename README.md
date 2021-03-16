@@ -271,6 +271,17 @@ Thread Safe , fixed size queue
     - 개인 IP는 ISP(Internet Service Provider) 가 제공한 동적 IP 할당함으로 Private 이다.  따라서 외부에서 접속이 불가
     - Public IP를 받으려면 호스팅을 받아야 한다. 그중 클라우드 서비스를 많이 사용 IaaS(Infrasturct as a Service)
 
+- ## CORS
+    - Origin(출처)
+    	- 출처는 프로토콜을 포함한 도메인을 의미한다.(도메인은 port 번호가 포함되어 있으며 port가 다른경우에도 다른 출처로 봄)
+    	- https://github.com/myungsworld/?page=2
+    		- https:// -> protocol , github.com -> domain , myungsworld -> path , ?page=2 -> query string
+    - SOP (Same Origin Policy)
+    	- 같은 출처에 대한 HTTP 요청만을 허락하는 것, 보안상의 이유로 다른 출처의 스크립트 HTTP 요청을 제한다고 했지만	  
+    	- 실제로 웹을 개발하다보면 다른 출처의 HTTP 요청을 해야하는 경우가 너무나 많음 -> CORS의 필요
+    - CORS (Cross Origin Resource Sharing)
+    	- Origin(host)를 가로질러 자원에 접근 할 수 있는 권한을 부여하도록 브라우저에 알려주는 정책
+ 
 - ## Design Pattern
     - [Decorator Pattern](https://github.com/myungsworld/Go/blob/main/src/designPattern/decoratePattern/main.go)
         - 객체에 새로운 행동을 동적으로 첨가해 객체의 기능을 유연하게 확장 시킴
@@ -304,8 +315,7 @@ Thread Safe , fixed size queue
         - Basic Grammer
             - [기본 Query + Post Form](https://github.com/myungsworld/Go/tree/main/src/gin/queryPostForm/main.go)
             - [Map을 이용한 Query, POST](https://github.com/myungsworld/Go/blob/main/src/gin/mapQueryPost/main.go)
-            - [Upload File](https://github.com/myungsworld/Go/tree/main/src/gin/uploadFile)
-
+            - [Upload File](https://github.com/myungsworld/Go/tree/main/src/gin/uploadFile) 
 
 - [echo](https://github.com/myungsworld/Go/blob/main/src/echoframework/main.go)
 - [StockAPI](https://github.com/myungsworld/Go/blob/main/src/stock/controllers/price.go)
