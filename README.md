@@ -271,6 +271,9 @@ Thread Safe , fixed size queue
     - 개인 IP는 ISP(Internet Service Provider) 가 제공한 동적 IP 할당함으로 Private 이다.  따라서 외부에서 접속이 불가
     - Public IP를 받으려면 호스팅을 받아야 한다. 그중 클라우드 서비스를 많이 사용 IaaS(Infrasturct as a Service)
 
+- ## [GoAdmin](https://book.go-admin.cn/en/quick_start)  
+    - 관리자용 백엔드 Go 프레임워크 
+    - mysql,sqlite,postgresql,mssql을 동시에 연결해서 사용가능
 - ## CORS
     - Origin(출처)
     	- 출처는 프로토콜을 포함한 도메인을 의미한다.(도메인은 port 번호가 포함되어 있으며 port가 다른경우에도 다른 출처로 봄)
