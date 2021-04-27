@@ -381,3 +381,6 @@ func CreateNeemo(c *gin.Context) {
 	})
 }
 ```
+
+- ## [Viper](https://medium.com/@bnprashanth256/reading-configuration-files-and-environment-variables-in-go-golang-c2607f912b63)
+	- config 관련 파일 핸들링 ex) config.yml 
