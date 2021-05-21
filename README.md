@@ -64,6 +64,7 @@ capacity가 8이고 len이 5인 slice에 새로운 slice 타입을 만들어서 
 위와 같이 a의 capacity를 넘기는 b slice를 추가하면 a 와 b 의 주소는 바뀌게 되어 b[0] 값을 9999로 바꾸면 b만 바뀌게 된다.  
 
 - [slice의 삽입](https://github.com/myungsworld/Go/blob/main/src/DiscoveryGo/3./prac2/main.go)
+- [slice의 삭제](https://github.com/myungsworld/Go/blob/main/src/DiscoveryGo/3./prac4/main.go)
 
 ## [Map](https://github.com/myungsworld/Go/blob/main/src/DiscoveryGo/3./%EC%97%B0%EC%8A%B5%EB%AC%B8%EC%A0%9C/5./main.go)
 Key-Value 값으로 저장되는 배열  
