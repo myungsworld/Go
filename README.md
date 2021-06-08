@@ -87,6 +87,7 @@ Key-Value 값으로 저장되는 배열
     }
 ```
 map의 value 값이 정해지지 않으면 int 0 , string = "" 로 초기화, 확인하는 방법은 파라미터를 2개로 두고 bool형으로 확인  
+[map으로 1차원배열 2차원 배열 만들기](https://github.com/myungsworld/Go/blob/main/src/map/main.go)
 
 - Hash
     - 출력 값의 범위가 있다. (넣을수 있는 입력값은 한정되어 있지만 출력값은 동일할수도 있음) 
