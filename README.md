@@ -389,5 +389,5 @@ func CreateNeemo(c *gin.Context) {
 
 - ## [Golang In-app Queue](https://insomnius.github.io/tech/golang/2019/08/29/go-inapp-queue/)
     - 웹이나 앱에서 서버에서 시간이 오래 걸리는 api를 핸들링하기 위한 방법
-    - ex [이메일처리](https://github.com/myungsworld/Go/src/queue-async/main.go)
+    - ex [이메일처리](https://github.com/myungsworld/Go/blob/main/src/queue-async/main.go)
     - 이메일에 대한 response를 client 에게 먼저 주고 난후 후에 channel 안에서 별도의 job queue 를 실행
