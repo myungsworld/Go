@@ -394,3 +394,14 @@ func CreateNeemo(c *gin.Context) {
 
 - ## [Excel Handling](https://medium.com/cloud-native-the-gathering/using-golang-to-create-and-read-excel-files-7e0c10a31583)
 	- golang excel 핸들링 하는법
+- ## 정규표현식
+	- 한글 영어 숫자만 입력가능하게 하려면
+```go 
+	validName := regexp.MustCompile(`^[a-zA-Z0-9ㄱ-ㅎ가-힣]+$`)
+	NameCheck := validName.MatchString(body.Name)
+	if NameCheck {
+		fmt.Println("Valid Name")
+	} else {
+		fmt.Println("Unvalid Name")
+	}
+```
