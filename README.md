@@ -405,3 +405,6 @@ func CreateNeemo(c *gin.Context) {
 		fmt.Println("Unvalid Name")
 	}
 ```
+
+- ## [파일구분](https://minwook-shin.github.io/go-file-type-magic-numbers-signature-filetype/)
+	- 파일을 가져왔을때 이미지인지 비디오인지 구분 및 파일 확장자 식별  
