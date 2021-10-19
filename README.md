@@ -317,6 +317,8 @@ Thread Safe , fixed size queue
     - [Database](https://github.com/myungsworld/Go/blob/main/src/dataStore/database)
         - SQL , NoSQL
 
+- ## Duck Typing
+
 - ## AWS
     - [Lambda](https://github.com/myungsworld/Go/blob/main/src/aws/lambda-functions/main.go)
         - go get github.com/aws/aws-lambda-go/lambda
