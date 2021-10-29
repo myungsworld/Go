@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7e5bba0-d8ae-4b26-8a96-53644746eb47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DuckTyping/fedex/fedex.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DuckTyping/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DuckTyping/postKorea/post_korea.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shellExecute/bak/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shellExecute/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shellExecute/test.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +47,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/shellExecute" />
       <recent name="$PROJECT_DIR$/src/DuckTyping" />
       <recent name="$PROJECT_DIR$/src/DuckTyping/NoDuckTyping/fedex" />
       <recent name="$PROJECT_DIR$/src/DuckTyping/NoDuckTyping/index" />
       <recent name="$PROJECT_DIR$/src/DuckTyping/NoDuckTyping" />
-      <recent name="$PROJECT_DIR$/src/queue-async/queue2" />
     </key>
   </component>
   <component name="RunManager">

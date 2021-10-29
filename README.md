@@ -318,7 +318,9 @@ Thread Safe , fixed size queue
         - SQL , NoSQL
 
 - ## [Duck Typing]()
-
+    - 타입선언시 인터페이스 구현 여부를 명시하지 않음
+    - 인터페이스가 메서드를 가지고있으면 그 메서드를 사용하는 모든 구조체는 다 그 인터페이스 메서드를 사용 할수 있다.
+    - 의존성 제거 , 추상계층을 나타냄
 - ## AWS
     - [Lambda](https://github.com/myungsworld/Go/blob/main/src/aws/lambda-functions/main.go)
         - go get github.com/aws/aws-lambda-go/lambda
