@@ -413,4 +413,4 @@ func CreateNeemo(c *gin.Context) {
 - ## [파일구분](https://minwook-shin.github.io/go-file-type-magic-numbers-signature-filetype/)
 	- 파일을 가져왔을때 이미지인지 비디오인지 구분 및 파일 확장자 식별  
 - ## [여러개 파일 한번에 다루기](https://github.com/myungsworld/Go/blob/main/src/fileHandling/main.go)
-	- filepath.Glob(filepath).   
+	- filepath.Glob(filepath)   
