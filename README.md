@@ -389,6 +389,7 @@ func CreateNeemo(c *gin.Context) {
 ```
 
 - ## [Viper](https://medium.com/@bnprashanth256/reading-configuration-files-and-environment-variables-in-go-golang-c2607f912b63)
+	- [공식깃허브](https://github.com/spf13/viper)
 	- config 관련 파일 핸들링 ex) config.yml 
 
 - ## [Golang In-app Queue](https://insomnius.github.io/tech/golang/2019/08/29/go-inapp-queue/)
