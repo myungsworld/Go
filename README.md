@@ -416,4 +416,4 @@ func CreateNeemo(c *gin.Context) {
 - ## [여러개 파일 한번에 다루기](https://github.com/myungsworld/Go/blob/main/src/fileHandling/main.go)
 	- filepath.Glob(filepath)   
 
-- ## [구글로그인](https://github.com/myungsworld/Go/blob/main/src/google-login)
+- ## [구글로그인](https://github.com/myungsworld/Go/blob/main/src/google-login/main.go)
