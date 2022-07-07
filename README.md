@@ -417,3 +417,5 @@ func CreateNeemo(c *gin.Context) {
 	- filepath.Glob(filepath)   
 
 - ## [구글로그인](https://github.com/myungsworld/Go/blob/main/src/google-login/main.go)
+
+- ## [AWS 코그니토](https://myungsworld.tistory.com/26) SSO 구현
